@@ -1,0 +1,17 @@
+name: Static test challenge
+tag: static_challenge
+category: Forensics
+static: true
+solutions:
+  - challengename: Static test challenge
+    steps: |
+     Step-by-step guide to challenge
+hosts:
+  - flags:
+      - tag: static_challenge-0
+        name: Static test challenge
+        static: HKN{FLAG-STRING}
+        points: 20
+        category: Forensics
+        description: |
+          Some text for participants

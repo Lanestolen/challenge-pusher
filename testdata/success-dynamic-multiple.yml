@@ -1,0 +1,29 @@
+name: Dynamic test challenge
+tag: dynamic_challenge
+category: Forensics
+static: false
+solutions:
+  - challengename: Dynamic test challenge
+    steps: |
+     Step-by-step guide to challenge
+description: |
+  A very decent description
+hosts:
+  - image: registry.gitlab.com/haaukins/forensics/dynamic-challenge:client
+    flags:
+      - tag: dynamic_challenge-0
+        name: Dynamic test challenge
+        static: HKN{FLAG-STRING}
+        points: 20
+        category: Forensics
+        description: |
+          Some text for participants
+  - image: registry.gitlab.com/haaukins/forensics/dynamic-challenge:server 
+    flags:
+      - tag: dynamic_challenge-1
+        name: Dynamic test challenge
+        static: HKN{FLAG-STRING}
+        points: 20
+        category: Forensics
+        description: |
+          Some text for participants

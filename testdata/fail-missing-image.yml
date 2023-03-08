@@ -1,0 +1,19 @@
+name: Dynamic test challenge
+tag: dynamic_challenge
+category: Forensics
+static: false
+solutions:
+  - challengename: Dynamic test challenge
+    steps: |
+     Step-by-step guide to challenge
+description: |
+  A very decent description
+hosts:
+  - flags:
+      - tag: dynamic_challenge-0
+        name: Dynamic test challenge
+        static: HKN{FLAG-STRING}
+        points: 20
+        category: Forensics
+        description: |
+          Some text for participants

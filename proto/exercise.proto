@@ -1,0 +1,98 @@
+syntax = "proto3";
+package exercise;
+option go_package = "github.com/lanestolen/challenge-pusher/proto";
+
+service ExerciseStore{
+    rpc AddExercises(AddExercisesRequest) returns (Empty) {}
+    rpc GetExercises(Empty) returns (GetExercisesResponse) {}
+    rpc GetExerciseByTags(GetExerciseByTagsRequest) returns (GetExercisesResponse) {}
+    rpc GetExerciseByCategory(GetExerciseByCategoryRequest) returns (GetExercisesResponse) {}
+
+    rpc AddCategory(AddCategoryRequest) returns (Empty) {}
+    rpc GetCategories(Empty) returns (GetCategoriesResponse) {}
+    rpc GetCategoriesByName(GetCategoriesByNameReq) returns (GetCategoriesResponse) {}
+}
+
+message Exercise {
+    string tag = 1;
+    string name = 2;
+    bool secret = 3; 
+    bool static = 4;
+    string category = 5;
+    repeated string topics = 6;
+    string description = 7;
+    repeated Solution solutions = 8;
+    repeated Host hosts = 9;
+    repeated string platforms = 10;
+}
+
+message Category {
+    string name = 1;
+    string decription = 2;
+    string tag = 3;
+}
+
+message Solution {
+    string challengeName = 1;
+    string steps = 2;
+}
+
+message Host {
+    string image = 1;
+    int32 memory = 2;
+    float cpu = 3;
+    repeated EnvVariable environment = 4;
+    repeated DNSRecord dns = 5;
+    repeated Flags flags = 6;
+}
+
+message EnvVariable{
+    string name = 1;
+    string value = 2;
+}
+
+message DNSRecord{
+    string type = 1;
+    string name = 2;
+    string data = 3;
+}
+
+message Flags {
+    string tag = 1;
+    string name = 2;
+    int32 points = 3;
+    string env = 4;
+    string static = 5;
+    string description = 6;
+    string category = 7;
+}
+
+message Empty{}
+
+message AddExercisesRequest {
+    repeated Exercise exercises = 1;
+}
+
+message GetExercisesResponse{
+    repeated Exercise exercises = 1;
+}
+
+message GetExerciseByTagsRequest{
+    repeated string tag = 1;
+}
+
+message GetExerciseByCategoryRequest{
+    string category = 1;
+}
+
+message GetCategoriesResponse{
+    repeated Category categories = 1;
+}
+
+message GetCategoriesByNameReq{
+    repeated string name = 1;
+}
+
+message AddCategoryRequest{
+    Category category = 1;
+}
