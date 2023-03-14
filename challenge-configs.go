@@ -30,7 +30,7 @@ func validateConfig(exercise *proto.Exercise) error {
 		return ErrMissingDefaultInfo
 	}
 
-	if exercise.Category == "Privacy Universe" && len(exercise.Platforms) == 0 {
+	if exercise.Category == "Privacy Universe" && (len(exercise.Platforms) == 0 || exercise.PrivacyEnv == "") {
 		return ErrMissingPrivacyUniverseInfo
 	}
 

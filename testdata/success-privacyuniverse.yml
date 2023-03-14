@@ -2,6 +2,7 @@ name: Static test challenge
 tag: static_challenge
 category: Privacy Universe
 platforms: ["jobspace", "photospace"]
+privacyenv: test
 static: true
 solutions:
   - challengename: Static test challenge
