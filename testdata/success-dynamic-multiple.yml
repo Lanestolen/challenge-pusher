@@ -6,6 +6,9 @@ solutions:
   - challengename: Dynamic test challenge
     steps: |
      Step-by-step guide to challenge
+  - challengename: Dynamic test challenge 2
+    steps: |
+     Step-by-step guide to challenge
 description: |
   A very decent description
 hosts:
@@ -21,7 +24,7 @@ hosts:
   - image: registry.gitlab.com/haaukins/forensics/dynamic-challenge:server 
     flags:
       - tag: dynamic_challenge-1
-        name: Dynamic test challenge
+        name: Dynamic test challenge 2
         static: HKN{FLAG-STRING}
         points: 20
         category: Forensics
